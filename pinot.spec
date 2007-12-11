@@ -1,6 +1,6 @@
 Summary:	Personal search and metasearch for the Free Desktop
 Name:		pinot
-Version:	0.80
+Version:	0.81
 Release:	%mkrel 1
 Group:		Text tools      
 License:	GPLv2+
@@ -9,16 +9,17 @@ Source0:	http://download2.berlios.de/pinot/%{name}-%{version}.tar.bz2
 BuildRequires:	libsqlite3-devel
 BuildRequires:	libxapian-devel
 BuildRequires:	libtextcat-devel
-BuildRequires:	taglib-devel
-BuildRequires:	curl-devel
-BuildRequires:	gmime-devel
-BuildRequires:	boost-devel
+BuildRequires:	libtaglib-devel
+BuildRequires:	libcurl-devel
+BuildRequires:	libgmime-devel
+BuildRequires:	libboost-devel
 BuildRequires:	libgtkmm2.4-devel
 BuildRequires:	libxml++-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	shared-mime-info
+BuildRequires:	libopenssl-devel
 Requires:	shared-mime-info
 Requires:	unzip
 Requires:	antiword
@@ -45,7 +46,9 @@ The included plugin enables Deskbar to search documents indexed by Pinot.
 %setup -q 
 
 %build
-%configure2_5x
+%configure2_5x \
+	--enable-static \
+	--with-ssl=%{_libdir}
 
 %make
 
@@ -75,7 +78,7 @@ rm -rf %{buildroot}
 %dir %{_datadir}/%{name}
 %{_bindir}/%{name}*
 %{_datadir}/%{name}/*
-#%{_libdir}/pinot/
+%{_libdir}/pinot/
 %{_datadir}/applications/*.desktop
 %{_datadir}/dbus-1/services/de.berlios.Pinot.service
 %{_sysconfdir}/xdg/autostart/*.desktop
@@ -83,5 +86,5 @@ rm -rf %{buildroot}
 %{_mandir}/man1/%{name}*
 
 %files deskbar
-%defattr(-,root,root,-)
+%defattr(-,root,root)
 %{_libdir}/deskbar-applet/handlers/%{name}*
