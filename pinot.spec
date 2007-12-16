@@ -13,7 +13,7 @@ BuildRequires:	libtaglib-devel
 BuildRequires:	libcurl-devel
 BuildRequires:	libgmime-devel
 BuildRequires:	libboost-devel
-BuildRequires:	libgtkmm2.4-devel
+BuildRequires:	gtkmm2.4-devel
 BuildRequires:	libxml++2.6-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-devel
