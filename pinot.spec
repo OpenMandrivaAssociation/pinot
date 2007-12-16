@@ -2,7 +2,7 @@ Summary:	Personal search and metasearch for the Free Desktop
 Name:		pinot
 Version:	0.81
 Release:	%mkrel 1
-Group:		Text tools      
+Group:		File tools
 License:	GPLv2+
 URL:		http://pinot.berlios.de
 Source0:	http://download2.berlios.de/pinot/%{name}-%{version}.tar.bz2
@@ -14,12 +14,12 @@ BuildRequires:	libcurl-devel
 BuildRequires:	libgmime-devel
 BuildRequires:	libboost-devel
 BuildRequires:	libgtkmm2.4-devel
-BuildRequires:	libxml++-devel
+BuildRequires:	libxml++2.6-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	shared-mime-info
-BuildRequires:	libopenssl-devel
+BuildRequires:	openssl-devel
 Requires:	shared-mime-info
 Requires:	unzip
 Requires:	antiword
@@ -47,7 +47,6 @@ The included plugin enables Deskbar to search documents indexed by Pinot.
 
 %build
 %configure2_5x \
-	--enable-static \
 	--with-ssl=%{_libdir}
 
 %make
@@ -73,7 +72,7 @@ rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc AUTHORS ChangeLog COPYING NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README TODO
 %config(noreplace) %{_sysconfdir}/%{name}/
 %dir %{_datadir}/%{name}
 %{_bindir}/%{name}*
@@ -87,4 +86,4 @@ rm -rf %{buildroot}
 
 %files deskbar
 %defattr(-,root,root)
-%{_libdir}/deskbar-applet/handlers/%{name}*
+%{_libdir}/deskbar-applet/*
