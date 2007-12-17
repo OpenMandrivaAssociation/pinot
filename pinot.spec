@@ -1,7 +1,7 @@
 Summary:	Personal search and metasearch for the Free Desktop
 Name:		pinot
 Version:	0.81
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		File tools
 License:	GPLv2+
 URL:		http://pinot.berlios.de
@@ -24,7 +24,7 @@ Requires:	shared-mime-info
 Requires:	unzip
 Requires:	antiword
 Requires:	unrtf
-Requires:	poppler-utils
+Requires:	poppler
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
