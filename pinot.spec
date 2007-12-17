@@ -1,7 +1,7 @@
 Summary:	Personal search and metasearch for the Free Desktop
 Name:		pinot
 Version:	0.81
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		File tools
 License:	GPLv2+
 URL:		http://pinot.berlios.de
@@ -25,6 +25,7 @@ Requires:	unzip
 Requires:	antiword
 Requires:	unrtf
 Requires:	poppler
+Requires(post,postun):	desktop-file-utils
 
 %description
 Pinot is a D-Bus service that crawls, indexes your documents and monitors them
@@ -55,6 +56,10 @@ rm -rf %{buildroot}
 
 %makeinstall_std
 
+desktop-file-install \
+	--remove-category="Core" \
+	--remove-category="Network" \
+	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %find_lang %{name}
 
