@@ -25,7 +25,6 @@ Requires:	unzip
 Requires:	antiword
 Requires:	unrtf
 Requires:	poppler
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Pinot is a D-Bus service that crawls, indexes your documents and monitors them
