@@ -1,13 +1,13 @@
 Summary:	Personal search and metasearch for the Free Desktop
 Name:		pinot
 Version:	0.81
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		File tools
 License:	GPLv2+
 URL:		http://pinot.berlios.de
 Source0:	http://download2.berlios.de/pinot/%{name}-%{version}.tar.bz2
 BuildRequires:	libsqlite3-devel
-BuildRequires:	libxapian-devel
+BuildRequires:	libxapian-devel >= 1.0.5
 BuildRequires:	libtextcat-devel
 BuildRequires:	libtaglib-devel
 BuildRequires:	libcurl-devel
