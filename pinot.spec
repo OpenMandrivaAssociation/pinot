@@ -3,6 +3,7 @@ Name:		pinot
 Version:	0.82
 Release:	%mkrel 1
 Group:		File tools
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2+
 URL:		http://pinot.berlios.de
 Source0:	http://download2.berlios.de/pinot/%{name}-%{version}.tar.bz2
