@@ -1,7 +1,7 @@
 Summary:	Personal search and metasearch for the Free Desktop
 Name:		pinot
-Version:	0.82
-Release:	%mkrel 2
+Version:	0.83
+Release:	%mkrel 1
 Group:		File tools
 License:	GPLv2+
 URL:		http://pinot.berlios.de
@@ -48,6 +48,7 @@ The included plugin enables Deskbar to search documents indexed by Pinot.
 
 %build
 %configure2_5x \
+	--with-http=curl \
 	--with-ssl=%{_libdir}
 
 %make
