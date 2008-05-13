@@ -21,6 +21,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	shared-mime-info
 BuildRequires:	openssl-devel
+BuildRequires:	libexif-devel
 Requires:	shared-mime-info
 Requires:	unzip
 Requires:	antiword
