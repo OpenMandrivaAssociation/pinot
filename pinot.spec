@@ -1,6 +1,6 @@
 Summary:	Personal search and metasearch for the Free Desktop
 Name:		pinot
-Version:	0.87
+Version:	0.88
 Release:	%mkrel 1
 Group:		File tools
 License:	GPLv2+
