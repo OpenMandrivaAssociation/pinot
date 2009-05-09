@@ -24,6 +24,7 @@ BuildRequires:	shared-mime-info
 BuildRequires:	openssl-devel
 BuildRequires:	libexif-devel
 BuildRequires:	libarchive-devel
+BuildRequires:	libgmime2.2-devel
 Requires:	shared-mime-info
 Requires:	unzip
 Requires:	antiword
@@ -55,9 +56,14 @@ The included plugin enables Deskbar to search documents indexed by Pinot.
 %build
 autoreconf -fi
 %configure2_5x \
-	--enable-libarchive \
 	--with-http=curl \
-	--with-ssl=%{_libdir}
+	--with-ssl=%{_libdir} \
+	--disable-soap \
+	--disable-xesam-glib \
+	--enable-dbus \
+	--enable-mempool \
+	--enable-libarchive \
+	--enable-gio
 
 %make
 
