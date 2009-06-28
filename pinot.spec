@@ -7,7 +7,6 @@ License:	GPLv2+
 URL:		http://pinot.berlios.de
 Source0:	http://download.berlios.de/pinot/%{name}-%{version}.tar.gz
 Patch0:		pinot-0.83-language-path.patch
-Patch1:		pinot-0.93-linkage.patch
 BuildRequires:	libsqlite3-devel
 BuildRequires:	libxapian-devel >= 1.0.5
 BuildRequires:	libtextcat-devel
@@ -49,12 +48,10 @@ Requires:	deskbar-applet
 The included plugin enables Deskbar to search documents indexed by Pinot.
 
 %prep
-%setup -q 
+%setup -q
 %patch0 -p1
-%patch1 -p0
 
 %build
-autoreconf -fi
 %configure2_5x \
 	--with-http=curl \
 	--with-ssl=%{_libdir} \
