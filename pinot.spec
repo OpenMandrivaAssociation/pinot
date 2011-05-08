@@ -1,12 +1,11 @@
 Summary:	Personal search and metasearch for the Free Desktop
 Name:		pinot
-Version:	0.96
-Release:	%mkrel 2
+Version:	0.97
+Release:	%mkrel 1
 Group:		File tools
 License:	GPLv2+
 URL:		http://pinot.berlios.de
 Source0:	http://download.berlios.de/pinot/%{name}-%{version}.tar.gz
-Patch0:		pinot-0.83-language-path.patch
 BuildRequires:	libsqlite3-devel
 BuildRequires:	libxapian-devel >= 1.0.5
 BuildRequires:	libtextcat-devel
@@ -49,14 +48,12 @@ The included plugin enables Deskbar to search documents indexed by Pinot.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure2_5x \
 	--with-http=curl \
 	--with-ssl=%{_libdir} \
 	--disable-soap \
-	--disable-xesam-glib \
 	--enable-dbus \
 	--enable-mempool \
 	--enable-libarchive \
