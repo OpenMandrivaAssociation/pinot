@@ -1,11 +1,11 @@
 Summary:	Personal search and metasearch for the Free Desktop
 Name:		pinot
-Version:	0.97
-Release:	%mkrel 1
+Version:	1.05
+Release:	1
 Group:		File tools
 License:	GPLv2+
-URL:		http://pinot.berlios.de
-Source0:	http://download.berlios.de/pinot/%{name}-%{version}.tar.gz
+URL:		http://code.google.com/p/pinot-search/
+Source0:	http://pinot-search.googlecode.com/files/%{name}-%{version}.tar.gz
 BuildRequires:	libsqlite3-devel
 BuildRequires:	libxapian-devel >= 1.0.5
 BuildRequires:	libtextcat-devel
@@ -29,7 +29,6 @@ Requires:	antiword
 Requires:	unrtf
 Requires:	poppler
 Requires(post,postun):	desktop-file-utils
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Pinot is a D-Bus service that crawls, indexes your documents and monitors them
@@ -62,8 +61,6 @@ The included plugin enables Deskbar to search documents indexed by Pinot.
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std
 
 desktop-file-install \
@@ -73,23 +70,7 @@ desktop-file-install \
 
 %find_lang %{name}
 
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%update_icon_cache hicolor
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%clean_icon_cache hicolor
-%endif
-
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog NEWS README TODO
 %config(noreplace) %{_sysconfdir}/%{name}/
 %dir %{_datadir}/%{name}
@@ -103,5 +84,4 @@ rm -rf %{buildroot}
 %{_mandir}/man1/%{name}*
 
 %files deskbar
-%defattr(-,root,root)
 %{_libdir}/deskbar-applet/*
