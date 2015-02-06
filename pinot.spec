@@ -1,7 +1,7 @@
 Summary:	Personal search and metasearch for the Free Desktop
 Name:		pinot
 Version:	1.05
-Release:	1
+Release:	2
 Group:		File tools
 License:	GPLv2+
 URL:		http://code.google.com/p/pinot-search/
