@@ -4,7 +4,7 @@ Version:	1.05
 Release:	2
 Group:		File tools
 License:	GPLv2+
-URL:		http://code.google.com/p/pinot-search/
+URL:		https://code.google.com/p/pinot-search/
 Source0:	http://pinot-search.googlecode.com/files/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	libxapian-devel >= 1.0.5
